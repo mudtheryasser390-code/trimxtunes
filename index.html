@@ -3,6 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم تيرمكس</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; text-align: center; background-color: #f4f4f9; }
+        .btn { padding: 12px 24px; font-size: 16px; margin: 8px; cursor: pointer; border-radius: 8px; border: none; background-color: #007bff; color: white; }
+        .btn:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>لوحة تحكم تيرمكس</h1>
+    
+    <button class="btn" onclick="runCommand('pkg update && pkg upgrade -y')">تحديث المستودعات</button>
+    <button class="btn" onclick="runCommand('pkg install python -y')">تثبيت بايثون</button>
+    <button class="btn" onclick="runCommand('pkg install git -y')">تثبيت Git</button>
+    <button class="btn" onclick="runCommand('pkg install curl -y')">تثبيت Curl</button>
+
+    <script>
+        function runCommand(cmd) {
+            navigator.clipboard.writeText(cmd);
+            alert('تم نسخ الأمر بنجاح! الصقه الآن في Termux:\n' + cmd);
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أدوات تيرمكس</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
